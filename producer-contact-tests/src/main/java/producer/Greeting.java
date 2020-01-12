@@ -1,4 +1,4 @@
-package hello;
+package producer;
 
 public class Greeting {
 

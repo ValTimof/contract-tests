@@ -1,3 +1,4 @@
 rootProject.name = 'contact-tests'
 
+include 'consumer-contract-tests'
 include 'producer-contact-tests'

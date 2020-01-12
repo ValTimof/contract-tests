@@ -1,15 +1,8 @@
-plugins {
-    id 'java'
-}
-
-group 'com.github.epam-valerii'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.11
+apply plugin: "java"
 
 repositories {
     flatDir {
-        dirs 'libs'
+        dirs '../producer-contact-tests/build/libs'
     }
     mavenCentral()
 }
@@ -21,4 +14,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }

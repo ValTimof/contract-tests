@@ -1,7 +1,7 @@
 plugins {
     id "java"
-//    id "org.springframework.boot" version "2.2.2.RELEASE"
-//    id "io.spring.dependency-management" version "1.0.8.RELEASE"
+    id "org.springframework.boot" version "2.2.2.RELEASE" apply false
+    id "io.spring.dependency-management" version "1.0.8.RELEASE"
 }
 
 allprojects {
@@ -13,5 +13,7 @@ allprojects {
     }
 
     sourceCompatibility = 1.11
-}
 
+    ext['junit-jupiter.version'] = '5.5.2'
+
+}
