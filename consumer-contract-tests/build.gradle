@@ -1,5 +1,3 @@
-apply plugin: "java"
-
 repositories {
     flatDir {
         dirs '../producer-contact-tests/build/libs'
@@ -8,13 +6,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
-    testImplementation 'io.rest-assured:rest-assured:4.1.2'
-}
-
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'io.rest-assured:rest-assured'
 }

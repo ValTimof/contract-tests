@@ -5,6 +5,10 @@ plugins {
 }
 
 allprojects {
+    apply plugin: "java"
+    apply plugin: "org.springframework.boot"
+    apply plugin: "io.spring.dependency-management"
+
     group 'com.github.epam-valerii'
     version '1.0-SNAPSHOT'
 
@@ -16,4 +20,14 @@ allprojects {
 
     ext['junit-jupiter.version'] = '5.5.2'
 
+    dependencies {
+        testImplementation "org.springframework.boot:spring-boot-starter-test"
+    }
+
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
 }
