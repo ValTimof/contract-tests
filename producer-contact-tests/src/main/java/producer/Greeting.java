@@ -4,10 +4,12 @@ public class Greeting {
 
 	private final long id;
 	private final String content;
+	private final String template;
 
-	public Greeting(long id, String content) {
+	public Greeting(long id, String content, String template) {
 		this.id = id;
 		this.content = content;
+		this.template = template;
 	}
 
 	public long getId() {
@@ -16,5 +18,9 @@ public class Greeting {
 
 	public String getContent() {
 		return content;
+	}
+
+	public String getTemplate() {
+		return template;
 	}
 }
