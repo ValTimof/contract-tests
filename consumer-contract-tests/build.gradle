@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.epam-valerii'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.11
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.2'
+    testImplementation 'io.rest-assured:rest-assured:4.1.2'
+}
+
+test {
+    useJUnitPlatform()
+}

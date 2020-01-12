@@ -1,0 +1,17 @@
+plugins {
+    id "java"
+//    id "org.springframework.boot" version "2.2.2.RELEASE"
+//    id "io.spring.dependency-management" version "1.0.8.RELEASE"
+}
+
+allprojects {
+    group 'com.github.epam-valerii'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.11
+}
+
