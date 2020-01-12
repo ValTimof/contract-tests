@@ -1,3 +1,7 @@
+plugins {
+    id "org.springframework.cloud.contract" version "2.2.1.RELEASE"
+}
+
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
 }
