@@ -1,13 +1,15 @@
 plugins {
+    id 'groovy'
     id "org.springframework.cloud.contract" version "2.2.1.RELEASE"
 }
 
+import org.springframework.cloud.contract.verifier.config.TestFramework
+
 dependencies {
-    implementation "org.springframework.boot:spring-boot-starter-web"
+    testImplementation "org.springframework.cloud:spring-cloud-starter-contract-verifier"
 }
 
 contracts {
-    testFramework = 'JUNIT5'
+    testFramework = TestFramework.JUNIT5
     packageWithBaseClasses = 'producer'
-
 }

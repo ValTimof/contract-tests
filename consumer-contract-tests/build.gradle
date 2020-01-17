@@ -6,7 +6,7 @@ repositories {
 }
 
 dependencies {
-    implementation "org.springframework.boot:spring-boot-starter-web"
     implementation 'io.rest-assured:rest-assured'
     testImplementation "org.springframework.cloud:spring-cloud-starter-contract-stub-runner"
+    testImplementation "com.github.epam-valerii:producer-contact-tests:+:stubs"
 }
