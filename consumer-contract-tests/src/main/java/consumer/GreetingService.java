@@ -11,11 +11,10 @@ public class GreetingService {
     @Value("${producer.url}")
     private String producerUrl;
 
-    public String greeting(String name) {
+    public String greeting(String field) {
         return given()
                 .baseUri(producerUrl)
-                .param("name", name)
                 .get("/greeting")
-                .path("content");
+                .path(field);
     }
 }

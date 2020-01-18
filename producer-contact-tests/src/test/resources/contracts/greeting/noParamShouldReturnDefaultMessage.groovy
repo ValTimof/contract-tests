@@ -1,4 +1,4 @@
-package contracts.greeting
+package greeting
 
 import org.springframework.cloud.contract.spec.Contract
 
@@ -7,20 +7,16 @@ Contract.make {
 Represents a successful greeting scenario without params
 """)
     request {
-        method 'Get'
-        url '/greeting'
-        headers {
-            contentType(applicationJson())
-        }
+        method GET()
+        url('/greeting')
     }
     response {
         status OK()
         body(
-
-                id: $(anyNumber()),
+                id: anyNumber(),
                 content: "Hello, World!",
-                template: "Hello, %s!"
-
+                template: "Hello, %s!",
+                date: anyDate()
 			)
         headers {
             contentType(applicationJson())

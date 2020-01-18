@@ -13,3 +13,10 @@ contracts {
     testFramework = TestFramework.JUNIT5
     packageWithBaseClasses = 'producer'
 }
+
+task copyStubJar(type: Copy) {
+    from verifierStubsJar
+    into '../libs'
+}
+
+build.dependsOn copyStubJar

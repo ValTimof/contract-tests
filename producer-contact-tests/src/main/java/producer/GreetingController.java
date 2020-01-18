@@ -4,7 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -16,13 +17,13 @@ public class GreetingController {
 
     @GetMapping(value = "/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
+        String date = ZonedDateTime.now(ZoneOffset.UTC)
+                .format(DateTimeFormatter.ISO_LOCAL_DATE);
         return Greeting.builder()
                 .id(counter.incrementAndGet())
                 .content(String.format(TEMPLATE, name))
                 .template(TEMPLATE)
-//                .date(dtf.format(now))
+                .date(date)
                 .build();
     }
 }

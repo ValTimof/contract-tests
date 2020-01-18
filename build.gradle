@@ -6,7 +6,6 @@ plugins {
 }
 
 ext['junit-jupiter.version'] = '5.5.2'
-//ext['rest-assured.version'] = '4.1.2'
 ext['mockito.version'] = '3.2.4'
 
 subprojects {
@@ -22,7 +21,7 @@ subprojects {
         mavenCentral()
     }
 
-    sourceCompatibility = 1.11
+    sourceCompatibility = 1.8
 
     dependencyManagement {
         imports {
@@ -30,12 +29,9 @@ subprojects {
         }
     }
 
-    configurations.all {
-        exclude group: 'ch.qos.logback'
-    }
-
     dependencies {
         implementation "org.springframework.boot:spring-boot-starter-web"
+//        implementation 'org.springframework.boot:spring-boot-starter-log4j2'
         testImplementation "org.springframework.boot:spring-boot-starter-test"
     }
 
@@ -48,3 +44,5 @@ subprojects {
 
     generateLombokConfig.enabled false
 }
+
+//project(':consumer-contract-tests').build.dependsOn project(':producer-contact-tests').build
