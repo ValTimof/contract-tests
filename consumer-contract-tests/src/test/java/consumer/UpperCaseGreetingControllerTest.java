@@ -25,8 +25,8 @@ class UpperCaseGreetingControllerTest {
 
     @Test
     void greetingShouldReturnUpperCase() throws Exception {
-        when(greetingService.greeting("content")).thenReturn("Hello, World!");
-        this.mockMvc.perform(get("/uppercase").param("field", "content"))
+        when(greetingService.greetingContent()).thenReturn("Hello, World!");
+        this.mockMvc.perform(get("/content").param("field", "content"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string("HELLO, WORLD!"));

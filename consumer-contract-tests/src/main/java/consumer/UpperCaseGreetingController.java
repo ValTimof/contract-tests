@@ -16,11 +16,10 @@ public class UpperCaseGreetingController {
     @Autowired
     private GreetingService greetingService;
 
-    @GetMapping(value = "/uppercase")
-    public String greetingUpperCase(
-            @RequestParam(value = "field", defaultValue = "default") String field) {
+    @GetMapping(value = "/content")
+    public String greetingUpperCase() {
         try {
-            String content = greetingService.greeting(field);
+            String content = greetingService.greetingContent();
             log.info(content);
             return content.toUpperCase();
         } catch (Exception e) {

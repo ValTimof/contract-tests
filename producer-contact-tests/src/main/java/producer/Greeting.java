@@ -1,12 +1,10 @@
 package producer;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@AllArgsConstructor
 public class Greeting {
     private long id;
     private String content;

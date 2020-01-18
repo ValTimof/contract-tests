@@ -41,7 +41,7 @@ public class ContractTest {
                 .log().method()
                 .param("field", "content")
                 .when()
-                .get("/uppercase")
+                .get("/content")
                 .prettyPeek()
                 .then()
                 .assertThat()

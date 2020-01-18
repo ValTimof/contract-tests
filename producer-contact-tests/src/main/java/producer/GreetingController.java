@@ -19,11 +19,10 @@ public class GreetingController {
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         String date = ZonedDateTime.now(ZoneOffset.UTC)
                 .format(DateTimeFormatter.ISO_LOCAL_DATE);
-        return Greeting.builder()
-                .id(counter.incrementAndGet())
-                .content(String.format(TEMPLATE, name))
-                .template(TEMPLATE)
-                .date(date)
-                .build();
+        return new Greeting(
+                counter.incrementAndGet(),
+                String.format(TEMPLATE, name),
+                TEMPLATE,
+                date);
     }
 }
