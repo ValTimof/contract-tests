@@ -15,6 +15,8 @@ public class GreetingBase {
 
     @BeforeEach
     public void setup() {
+
         RestAssuredMockMvc.standaloneSetup(this.greetingController);
+
     }
 }
